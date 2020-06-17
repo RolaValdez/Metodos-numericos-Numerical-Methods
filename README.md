@@ -16,3 +16,5 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 
 **ENGLISH**
 In this section are included all of the codes about finding the roots in a function with both closed and open methods. Aditionally you can watch the Youtube playlist here: https://www.youtube.com/playlist?list=PLSrGuI5Xqm-5HtgtzBP4Meom1K0ZuzJo-
+
+- [Bisection method (function)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BisectionFcn.m)
