@@ -12,7 +12,7 @@ This repository contains all of the Matlab codes I've developed on my Youtube ch
 En esta sección se incluyen todos los códigos para encontrar las raíces de una función tanto para métodos cerrados como abiertos. Adicionalmente pueden ver la lista de reproducción de Youtube aquí: https://www.youtube.com/playlist?list=PLSrGuI5Xqm-5HtgtzBP4Meom1K0ZuzJo-
 
 *[Método de la bisección (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BiseccionFcn.m)
-*
+*[Método de la bisección (interactivo)] (https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/Biseccion.m)
 
 **ENGLISH**
 In this section are included all of the codes about finding the roots in a function with both closed and open methods. Aditionally you can watch the Youtube playlist here: https://www.youtube.com/playlist?list=PLSrGuI5Xqm-5HtgtzBP4Meom1K0ZuzJo-
