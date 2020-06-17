@@ -17,6 +17,8 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Método de la regla falsa (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/ReglaFalsa.m)
 - [Método de la regla falsa modificada (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/ReglaFalsaModFcn.m)
 - [Método de la regla falsa modificada (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/ReglaFalsaMod.m)
+- [Búsqueda por intervalos (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BusquedaPorIntervalosAUTO.m)
+- [Búsqueda por intervalos (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BusquedaPorIntervalosMANUAL.m)
 
 **ENGLISH**
 In this section are included all of the codes about finding the roots in a function with both closed and open methods. Aditionally you can watch the Youtube playlist here: https://www.youtube.com/playlist?list=PLSrGuI5Xqm-5HtgtzBP4Meom1K0ZuzJo-
