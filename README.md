@@ -5,13 +5,13 @@ Este repositorio contiene todos los códigos de Matlab que he creado en mi canal
 **ENGLISH**
 This repository contains all of the Matlab codes I've developed on my Youtube channel (Tutoingeniero) about numerical methods. This contains all of the scripts and functions developed in the series and will be updated frequently. In the sections below there will be included a brief explanation of the topics that each code belongs to. All the functions have the "Fcn" termination on their names. Codes have both spanish and english versions.
 
-**Matlab File Exchange:** [![View Métodos numéricos | Numerical methods on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/77031-metodos-numericos-numerical-methods)
+**Matlab File Exchange:** [![View Librería de métodos numéricos | Numerical methods library on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/77031-libreria-de-metodos-numericos-numerical-methods-library)
 
 ## Raices-de-una-funcion-Roots-of-a-function
 **ESPAÑOL**
 En esta sección se incluyen todos los códigos para encontrar las raíces de una función tanto para métodos cerrados como abiertos. Adicionalmente pueden ver la lista de reproducción de Youtube aquí: https://www.youtube.com/playlist?list=PLSrGuI5Xqm-5HtgtzBP4Meom1K0ZuzJo-
 
-*[Método de la bisección](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BiseccionFcn.m)
+*[Método de la bisección (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BiseccionFcn.m)
 *
 
 **ENGLISH**
