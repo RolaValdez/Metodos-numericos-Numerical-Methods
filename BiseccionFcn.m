@@ -4,6 +4,11 @@ function [M,XR,ER,Iter]=BiseccionFcn(f,xl,xu,Niter,Tol)
 %Canal de Youtube: https://www.youtube.com/channel/UCU1pdvVscOdtLpRQBp-TbWg
 %Actualizado: 16/jun/2020
 
+%Método de la bisección (versión función) ESPAÑOL.
+%Llama a esta función desde la ventana de comandos o cualquier script para
+%encontrar la raíz de una función en un intervalo y obtén una tabla con el
+%proceso.
+
 % ESTA FUNCION PIDE LOS SIGUIENTES DATOS DE ENTRADA:
 
 % f=función como un identificador de función (function handle) 
