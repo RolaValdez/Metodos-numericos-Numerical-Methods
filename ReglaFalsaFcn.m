@@ -1,83 +1,108 @@
-function [M,XR,ER,Iter]=ReglaFalsaFcn(f,xl,xu,Niter,Tol)
-%Autor: Rolando Valdez Guzm·n
+function [M, XR, ER, Iter] = ReglaFalsaFcn(f, xl, xu, Niter, Tol)
+%Autor: Rolando Valdez Guzm√°n
 %Alias: Tutoingeniero
 %Canal de Youtube: https://www.youtube.com/channel/UCU1pdvVscOdtLpRQBp-TbWg
-%VersiÛn: 1.0
-%Actualizado: 17/jun/2020
+%Versi√≥n: 2.0
+%Actualizado: 30/jul/2020
 
-%MÈtodo de la regla falsa (versiÛn funciÛn) ESPA—OL.
-%Llama a esta funciÛn desde la ventana de comandos o cualquier script para
-%encontrar la raÌz de una funciÛn en un intervalo y obtÈn una tabla con el
+%M√©todo de la regla falsa (versi√≥n funci√≥n) ESPA√ëOL.
+%Llama a esta funci√≥n desde la ventana de comandos o cualquier script para
+%encontrar la ra√≠z de una funci√≥n en un intervalo y obt√©n una tabla con el
 %proceso.
 
 % ESTA FUNCION PIDE LOS SIGUIENTES DATOS DE ENTRADA:
 
-% f=funciÛn como un identificador de funciÛn (function handle) 
+% f = funci√≥n como un identificador de funci√≥n (function handle) 
 %   ej. @(x) cos(x)
-% xl=LÌmite inferior. Este dato es un escalar.
-% xu=LÌmite superior. Este dato es un escalar.
-% Niter=N˙mero de iteraciones (100 por default).
-% Tol=Tolerancia para el criterio de convergencia a superar o igualar en
-% porcentaje (0.001 por default)
+% xl = L√≠mite inferior. Este dato es un escalar.
+% xu = L√≠mite superior. Este dato es un escalar.
+% Niter = N√∫mero de iteraciones.
+% Tol = Tolerancia para el criterio de convergencia a superar o igualar en
+% porcentaje.
 
 % VARIABLES DE SALIDA:
 
-% M= Tabla de resultados {'xl','xr','xu','f(xl)','f(xr)','f(xu)','Error relativo (%)'}
-% XR=Ultima iteraciÛn de la raÌz de la funciÛn.
-% ER=Ultima iteracion del error relativo.
-% Iter=N˙mero de iteraciones
+% M = Tabla de resultados {'xl', 'xr', 'xu', 'f(xl)', 'f(xr)', 'f(xu)', 'Error relativo (%)'}
+% XR = Ultima iteraci√≥n de la ra√≠z de la funci√≥n.
+% ER = Ultima iteracion del error relativo.
+% Iter = N√∫mero de iteraciones
 
-if nargin<3                 %Si se ingresan menos de tres datos de entrada...
-    error('Se necesita definir una funciÛn y un intervalo a evaluar');
-elseif nargin==3            %Si se ingresan sÛlo tres datos de entrada...
-    Niter=100;
-    Tol=0.001;
-elseif nargin==4            %Si se ingresan sÛlo cuatro datos de entrada...
-    Tol=0.001;
+%METODOS DE SOLUCION
+
+%M√©todo 1: Si Niter est√° vac√≠o (Niter = []) entonces se debe especificar un
+%error relativo m√≠nimo para converger.
+%M√©todo 2: Si Tol est√° vac√≠o (Tol = []) entonces se debe especificar un
+%n√∫mero m√°ximo de iteraciones para el c√≥digo. Es posible que un n√∫mero muy
+%grande de iteraciones cree un error y un mensaje aparecer√° sugiriendo
+%reducir el n√∫mero de iteraciones.
+
+%Si se ingresan menos de tres datos de entrada...
+if nargin < 5                 
+    error('Se necesita definir una funci√≥n, un intervalo a evaluar, un n√∫mero m√°ximo de iteraciones y un error relativo m√≠nimo');
+%Si se ingresan todos los datos de entrada, elegir un m√©todo de soluci√≥n
+else                          
+    if  isempty(Niter) == 1  
+        metodo = 1;
+        Niter = 1000;
+        disp(newline);
+        disp('Soluci√≥n por error relativo m√≠nimo para converger');
+    elseif isempty(Tol) == 1
+        metodo = 2;
+        disp(newline);
+        disp('Soluci√≥n por n√∫mero m√°ximo de iteraciones para converger');
+    elseif isempty(Niter) == 0 && isempty(Tol) == 0
+        error('Niter y Tol no pueden tener un dato de entrada al mismo tiempo, uno de los dos debe estar vac√≠o (ejemplo: Niter = [])');
+    end
 end
 
-fxl=f(xl); %Punto en Y para el lÌmite inferior.
-fxu=f(xu); %Punto en Y para el lÌmite superior.
+fxl = f(xl); %Punto en Y para el l√≠mite inferior.
+fxu = f(xu); %Punto en Y para el l√≠mite superior.
 
-if fxl*fxu > 0 %Esta propiedad es la que hace que Èste sea un mÈtodo cerrado.
-    error('No hay una raÌz en ese intervalo!'); 
+if fxl * fxu > 0 %Esta propiedad es la que hace que √©ste sea un m√©todo cerrado.
+    error('No hay una ra√≠z en ese intervalo!'); 
 end
 
-for i = 1:Niter
-    xr(i)=xu(i)-fxu(i)*((xu(i)-xl(i))/(fxu(i)-fxl(i))); %Calcula el punto medio falso actual.
-    fxr(i)=f(xr(i)); %Evalua la funciÛn en el punto medio falso actual.
+for i = 1:Niter - 1
+    xr(i) = xu(i) - fxu(i) * ((xu(i) - xl(i)) / (fxu(i) - fxl(i))); %Calcula el punto medio falso actual.
+    fxr(i) = f(xr(i)); %Evalua la funci√≥n en el punto medio falso actual.
     
-    if f(xr(i))*f(xl(i)) > 0 %Si esta condiciÛn se cumple, la raÌz NO est· entre xl y xr
-        xl(i+1) = xr(i); %El punto medio es el nuevo lÌmite inferior.
-        xu(i+1) = xu(i); %El lÌmite superior se mantiene igual.
-        fxl(i+1)=f(xl(i+1));
-        fxu(i+1)=f(xu(i+1));
-    elseif f(xr(i))*f(xu(i)) > 0 %Si esta condiciÛn se cumple, la raÌz NO est· entre xr y xu
-        xu(i+1) = xr(i); %El punto medio es el nuevo lÌmite superior.
-        xl(i+1) = xl(i); %El lÌmite inferior se mantiene igual.
-        fxl(i+1)=f(xl(i+1));
-        fxu(i+1)=f(xu(i+1));
+    if f(xr(i)) * f(xl(i)) > 0 %Si esta condici√≥n se cumple, la ra√≠z NO est√° entre xl y xr
+        xl(i+1) = xr(i); %El punto medio es el nuevo l√≠mite inferior.
+        xu(i+1) = xu(i); %El l√≠mite superior se mantiene igual.
+        fxl(i+1) = f(xl(i+1));
+        fxu(i+1) = f(xu(i+1));
+    elseif f(xr(i)) * f(xu(i)) > 0 %Si esta condici√≥n se cumple, la ra√≠z NO est√° entre xr y xu
+        xu(i+1) = xr(i); %El punto medio es el nuevo l√≠mite superior.
+        xl(i+1) = xl(i); %El l√≠mite inferior se mantiene igual.
+        fxl(i+1) = f(xl(i+1));
+        fxu(i+1) = f(xu(i+1));
+    end
+    %Asegurarse de que si Niter es muy grande aparezca una alerta.
+    try
+        xr(i+1)=xu(i+1)-fxu(i+1)*((xu(i+1)-xl(i+1))/(fxu(i+1)-fxl(i+1))); %Actulizamos el punto medio falso y su punto en Y
+    catch
+        error('Intenta un n√∫mero menor de iteraciones');
     end
     
-    xr(i+1)=xu(i+1)-fxu(i+1)*((xu(i+1)-xl(i+1))/(fxu(i+1)-fxl(i+1))); %Actulizamos el punto medio falso y su punto en Y
     fxr(i+1)=f(xr(i+1));
     Error(i+1)=abs((xr(i+1)-xr(i))/xr(i+1))*100; %Calcula el error relativo actual
     
-    if Error(i+1) < Tol %Si el error relativo es menor a la tolerancia exigida, se acaba el ciclo.
-        break;
+    if metodo == 1
+        if Error(i+1) < Tol %Si el error relativo es menor a la tolerancia exigida, se acaba el ciclo.
+            break;
+        end
     end
 end
 
-M1={'xl','xr','xu','f(xl)','f(xr)','f(xu)','Error relativo (%)'};
-M2=num2cell([xl' xr' xu' fxl' fxr' fxu' Error']);
-M=[M1; M2];
-XR=xr(end);
-ER=Error(end);
-Iter=i+1;
+M1 = {'xl', 'xr', 'xu', 'f(xl)', 'f(xr)', 'f(xu)', 'Error relativo (%)'};
+M2 = num2cell([xl', xr', xu', fxl', fxr', fxu', Error']);
+M = [M1; M2];
+XR = xr(end);
+ER = Error(end);
+Iter = i+1;
 
-%Evaluar la funciÛn con la raÌz aproximada y mensaje de resumen.
-Resultado=f(XR);
-disp(newline)
-disp(['Evaluando la funciÛn ' func2str(f) ' con ' num2str(XR) ', el resultado es: ' num2str(Resultado)]);
+%Evaluar la funci√≥n con la ra√≠z aproximada y mensaje de resumen.
+Resultado = f(XR);
+disp(['Evaluando la funci√≥n ' func2str(f) ' con ' num2str(XR) ', el resultado es: ' num2str(Resultado)]);
 disp(['Error relativo (%): ' num2str(ER)]);
-disp(['N˙mero de iteraciones: ' num2str(Iter)]);
+disp(['N√∫mero de iteraciones: ' num2str(Iter)]);
