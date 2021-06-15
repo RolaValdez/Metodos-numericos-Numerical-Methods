@@ -4,6 +4,7 @@ Este repositorio contiene todos los códigos de Matlab que he creado en mi canal
 ## Series de Taylor/MacLaurin
 -[Series de Taylor de una variable](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/Taylor.m)
 -[Series de Taylor multivariables](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/TaylorMulti.m)
+-[GUI de series de Taylor](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/SeriesdeTaylorApp.rar)
 
 ## Raices-de-una-funcion
 En esta sección se incluyen todos los códigos para encontrar las raíces de una función tanto para métodos cerrados como abiertos.
