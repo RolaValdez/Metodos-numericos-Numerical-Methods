@@ -17,4 +17,4 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Método de la regla falsa modificada (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/ReglaFalsaMod.m)
 - [Búsqueda por intervalos (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BusquedaPorIntervalosAUTO.m)
 - [Búsqueda por intervalos (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BusquedaPorIntervalosMANUAL.m)
-
+- [Método de Newton-Rhapson (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonRhapson.m)
