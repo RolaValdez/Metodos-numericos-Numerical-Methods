@@ -19,3 +19,4 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Búsqueda por intervalos (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/BusquedaPorIntervalosMANUAL.m)
 - [Método de Newton-Rhapson (interactivo)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonRhapson.m)
 - [Método de Newton-Rhapson (función REQUIERE SYMBOLIC MATH TOOLBOX)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonRhapsonFcn.m)
+- [Método de Newton-Rhapson (función COMPATIBLE CON CUALQUEIR MATLAB)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonRhapson2Fcn.m)
