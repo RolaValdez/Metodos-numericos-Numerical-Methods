@@ -22,3 +22,6 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Método de Newton-Rhapson (función COMPATIBLE CON CUALQUEIR MATLAB)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonRhapson2Fcn.m)
 - [Newton-Rhapson multivariable (interactivo REQUIERE SYMBOLIC MATH TOOLBOX)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonRhapsonMulti.m)
 - [Newton-Rhapson multivariable (función REQUIERE SYMBOLIC MATH TOOLBOX)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonRhapsonMultiFcn.m)
+- [Método de la Secante (versión interactiva)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/Secante.m)
+- [Método de la Secante (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/SecanteFcn.m)
+
