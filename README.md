@@ -25,3 +25,4 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Método de la Secante (versión interactiva)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/Secante.m)
 - [Método de la Secante (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/SecanteFcn.m)
 
+## Sistemas de ecuaciones lineales
