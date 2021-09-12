@@ -26,3 +26,4 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Método de la Secante (función)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/SecanteFcn.m)
 
 ## Sistemas de ecuaciones lineales
+- [Eliminación gaussiana](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/ElimiacionGauss.m)
