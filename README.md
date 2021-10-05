@@ -27,3 +27,4 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 
 ## Sistemas de ecuaciones lineales
 - [Eliminación gaussiana](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/ElimiacionGauss.m)
+- [Eliminación de Gauss-Jordan](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/GaussJordan.m)
