@@ -29,3 +29,5 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Eliminación gaussiana](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/ElimiacionGauss.m)
 - [Eliminación de Gauss-Jordan](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/GaussJordan.m)
 - [Descomposición/factorización LU](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/DescompLU.m)
+- [Método de Gauss-Jacobi](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/GaussJacobi.m)
+- -[Método de Gauss-Seidel](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/GaussSeidel.m)
