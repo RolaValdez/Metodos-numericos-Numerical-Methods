@@ -2,8 +2,8 @@ function [M,xn] = GaussSeidel(A,B,xi,Niter,es,lambda)
 %Autor: Rolando Valdez Guzmán
 %Alias: Tutoingeniero
 %Canal de Youtube: https://www.youtube.com/channel/UCU1pdvVscOdtLpRQBp-TbWg
-%Versión: 1.0
-%Actualizado: 27/nov/2021
+%Versión: 1.1
+%Actualizado: 31/dic/2021
 
 % ESTA FUNCION PIDE LOS SIGUIENTES DATOS DE ENTRADA:
 
@@ -103,8 +103,10 @@ end
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Resultados~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-E1 = strseq('x',1:length(B))';
-E2 = strseq('Ea (%) de x',1:length(B))';
+for i = 1:length(B)
+    E1(i) = cellstr(['x',num2str(i)]);
+    E2(i) = cellstr(['Ea (%) de x', num2str(i)])';
+end
 Encabezado = [E1,E2];
 Datos = num2cell([xi,ea]);
 xn = xi(end,:)';
