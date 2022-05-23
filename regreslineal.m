@@ -54,10 +54,10 @@ T = table(E1,E2,'VariableNames',{'Valores calculados','Resultados'});
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Gráfica~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
-scatter(x,y); hold on
+scatter(x,y,'LineWidth',1,'MarkerEdgeColor','b'); hold on
 modelo = poly2sym(flipud(a));
-f = matlabFunction(modelo); 
-fplot(modelo,[x(1),x(end)]); hold on
+f = matlabFunction(modelo);
+fplot(modelo,[x(1),x(end)],'LineWidth',2,'Color','k'); hold on
 grid on
 if sign(a(2)) == -1
     title(['Y = ',num2str(a(1)),num2str(a(2)),'x']);
@@ -67,6 +67,7 @@ end
 maxX = max(x); 
 maxY = max(y); minY = min(y);
 axis([0, maxX + 2, minY - 2, maxY + 2]);
+h = gcf; h.Position(1:2) = [765,90];
 
 if nargin < 3
     Y = NaN;
