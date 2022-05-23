@@ -1,31 +1,31 @@
 function x = GaussJordan(A,B)
-%Autor: Rolando Valdez Guzm醤
+%Autor: Rolando Valdez Guzm谩n
 %Alias: Tutoingeniero
 %Canal de Youtube: https://www.youtube.com/channel/UCU1pdvVscOdtLpRQBp-TbWg
-%Versi髇: 2.0
-%Actualizado: 3/sep/2021
+%Versi贸n: 2.1
+%Actualizado: 18/may/2022
 
 % ESTA FUNCION PIDE LOS SIGUIENTES DATOS DE ENTRADA:
 
 % A = matriz cuadrada de coeficientes del sistema de ecuaciones.
-% B = Vector columna de resultados de cada ecuaci髇.
+% B = Vector columna de resultados de cada ecuaci贸n.
 
 % VARIABLES DE SALIDA:
 
 % x = vector con los valore para todas las variables del sistema de
 % ecuaciones.
 
-%~~~~~~~~~~~~~~~Protecci髇 contra errores en las entradas~~~~~~~~~~~~~~~~~%
+%~~~~~~~~~~~~~~~Protecci贸n contra errores en las entradas~~~~~~~~~~~~~~~~~%
 if nargin ~= 2                 
     error('Se debe ingresar una matriz cuadrada A y un vector columna B');
-%Si se ingresan todos los datos de entrada, elegir un m閠odo de soluci髇
+%Si se ingresan todos los datos de entrada, elegir un m茅todo de soluci贸n
 else                          
     if size(A,1) ~= size(A,2)
         error('Se necesita que la matriz A sea cuadrada')
     elseif size(B,2) ~= 1
         error('B debe ser un vector columna');
     elseif size(A,1) ~= size(B,1)
-        error('El n鷐ero de filas de A no coincide con el de B. Sistema inconsistente');
+        error('El n煤mero de filas de A no coincide con el de B. Sistema inconsistente');
     end
 end
 
@@ -36,7 +36,7 @@ end
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Setup~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 n = size(A,1); t = ' | '; T = repmat(t,length(A(:,1)),1);
-%%uni髇 de los datos en una solo matriz
+%%uni贸n de los datos en una solo matriz
 a = num2str(A); b = num2str(B); c = [a T b]; 
 disp('Sistema original'); disp(c); disp(newline);
 
@@ -48,10 +48,9 @@ for k = 1:n
         [filapivote,~] = find(abs(A) == max(abs(A(:,k))));
         A([k,filapivote(1)],:) = A([filapivote(1),k],:);
         B([k,filapivote(1)]) = B([filapivote(1),k]);
-%         c = [num2str(A), T, num2str(B)]
     end
 end
-c = [num2str(A), T, num2str(B)]; %%uni髇 de los datos en una solo matriz
+c = [num2str(A), T, num2str(B)]; %%uni贸n de los datos en una solo matriz
 disp(c); disp(newline);
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Gauss-Jordan~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
@@ -61,26 +60,30 @@ for k = 1:n
     if A(k,k) ~= 1 %%si el elemento i,i de la diagonal es diferente de 1
         B(k) = B(k)/A(k,k);
         A(k,:) = A(k,:)./A(k,k);
-        c = [num2str(A), T, num2str(B)]; %%uni髇 de los datos en una solo matriz
-        disp(['Paso ',num2str(j),': Normalizar la ecuaci髇 ',num2str(k)]); 
+        c = [num2str(A), T, num2str(B)]; %%uni贸n de los datos en una solo matriz
+        disp(['Paso ',num2str(j),': Normalizar la ecuaci贸n ',num2str(k)]); 
         disp(c); disp(newline);
         j = j+1;
     end
     
     for i = 1:n
         if i ~= k
-            factor = A(i,k)/A(k,k);
-            A(i,:) = A(i,:) - factor*A(k,:);
-            B(i) = B(i) - factor*B(k);
-            c = [num2str(A), T, num2str(B)]; %%uni髇 de los datos en una solo matriz
-            disp(['Paso ',num2str(j)]); disp(c); disp(newline);
-            j = j+1;
+            if A(i,k) ~= 0 %Si no hay un cero en este elemento, hacer eliminaci贸n
+                factor = A(i,k)/A(k,k);
+                A(i,:) = A(i,:) - factor*A(k,:);
+                B(i) = B(i) - factor*B(k);
+                c = [num2str(A), T, num2str(B)]; %%uni贸n de los datos en una solo matriz
+                disp(['Paso ',num2str(j)]); disp(c); disp(newline);
+                j = j+1;
+            else
+                continue %Si hay un cero, saltarse al siguiente elemento
+            end
         end
     end
     x = B;
 end
 
-%~~~~~~~~~~~~~~~~~~~~~~~~~Impresi髇 de resultados~~~~~~~~~~~~~~~~~~~~~~~~~%
+%~~~~~~~~~~~~~~~~~~~~~~~~~Impresi贸n de resultados~~~~~~~~~~~~~~~~~~~~~~~~~%
 
 for i = 1:n
     fprintf('x%d = %f',i,x(i));
