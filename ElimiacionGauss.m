@@ -1,9 +1,9 @@
-function x = ElimiacionGauss(A,B)
+function x = EliminacionGauss(A,B)
 %Autor: Rolando Valdez Guzmán
 %Alias: Tutoingeniero
 %Canal de Youtube: https://www.youtube.com/channel/UCU1pdvVscOdtLpRQBp-TbWg
-%Versión: 2.0
-%Actualizado: 3/sep/2021
+%Versión: 2.1
+%Actualizado: 18/may/2022
 
 % ESTA FUNCION PIDE LOS SIGUIENTES DATOS DE ENTRADA:
 
@@ -29,10 +29,10 @@ else
     end
 end
 
-disp(newline);
-if prod(diag(A)) == 0
-    error('El determinante de la matriz A es cero, no se puede resolver');
-end
+% disp(newline);
+% if prod(diag(A)) == 0
+%     error('El determinante de la matriz A es cero, no se puede resolver');
+% end
 
 %~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~Setup~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~%
 
@@ -45,12 +45,16 @@ disp('Sistema original'); disp(c); disp(newline);
 j = 1;
 for k = 1:n - 1
     for i = k + 1:n
-        factor = A(i,k)/A(k,k);
-        A(i,:) = A(i,:) - factor*A(k,:);
-        B(i) = B(i) - factor*B(k);
-        c = [num2str(A), T, num2str(B)]; %%unión de los datos en una solo matriz
-        disp(['Paso ',num2str(j)]); disp(c); disp(newline);
-        j = j+1;
+        if A(i,k) ~= 0 %Si no hay un cero en este elemento, hacer eliminación
+            factor = A(i,k)/A(k,k);
+            A(i,:) = A(i,:) - factor*A(k,:);
+            B(i) = B(i) - factor*B(k);
+            c = [num2str(A), T, num2str(B)]; %%unión de los datos en una solo matriz
+            disp(['Paso ',num2str(j)]); disp(c); disp(newline);
+            j = j+1;
+        else
+            continue %Si hay un cero, saltarse al siguiente elemento
+        end
     end
 end
 
