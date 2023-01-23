@@ -35,3 +35,4 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 ## Regresión por mínimos cuadrados
 - [Regresión lineal](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/regreslineal.m)
 - [Regresión polinomial](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/regrespol.m)
+- [Regresión no lineal (Gauss-Newton)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/regresnonlinear.m)
