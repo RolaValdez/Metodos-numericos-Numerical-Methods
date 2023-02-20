@@ -38,4 +38,4 @@ En esta sección se incluyen todos los códigos para encontrar las raíces de un
 - [Regresión no lineal (Gauss-Newton)](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/regresnonlinear.m)
 
 ## Interpolación
-- 
+- [Interpolación Polinomial de Newton por Diferencias Divididas Finitas](https://github.com/RolaValdez/Metodos-numericos-Numerical-Methods/blob/master/NewtonInt.m)
